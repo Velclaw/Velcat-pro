@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="vi" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VelCat Pro - Nền tảng Deploy Tự Động & Quản Lý Công Việc Thông Minh</title>
+    <meta name="description" content="Nền tảng quản lý triển khai tự động & điều hành công việc thông minh, tích hợp AI Agent, CI/CD, dashboard thời gian thực và kết nối GitHub repository." />
+    <meta property="og:title" content="VelCat Pro - Nền tảng Deploy Tự Động & Quản Lý Công Việc Thông Minh" />
+    <meta property="og:description" content="Nền tảng quản lý triển khai tự động & điều hành công việc thông minh, tích hợp AI Agent, CI/CD, dashboard thời gian thực và kết nối GitHub repository." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+      window.addEventListener('error', function(e) {
+        console.error('[VelCat System Error]', e);
+        var errContainer = document.getElementById('velcat-boot-error');
+        if (errContainer) {
+          errContainer.style.display = 'block';
+          var msgEl = document.getElementById('velcat-error-text');
+          if (msgEl) msgEl.innerText = (e.message || String(e.error || e));
+        }
+      });
+    </script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased selection:bg-cyan-500 selection:text-white">
+    <div id="root">
+      <!-- Fast initial placeholder replaced immediately when React hydrates -->
+      <div style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #020617; color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 20px; text-align: center;">
+        <div style="width: 48px; height: 48px; border: 3px solid rgba(6, 182, 212, 0.2); border-top-color: #06b6d4; border-radius: 50%; animation: velcat-spin 0.9s linear infinite; margin-bottom: 20px;"></div>
+        <h1 style="font-size: 20px; font-weight: 800; letter-spacing: -0.5px; margin: 0 0 6px 0; color: #ffffff;">VelCat Pro</h1>
+        <p style="font-size: 13px; color: #94a3b8; margin: 0 0 20px 0; max-width: 320px;">Đang khởi tạo nền tảng DevOps & CI/CD...</p>
+        
+        <!-- Error box if script loading is blocked -->
+        <div id="velcat-boot-error" style="display: none; background: rgba(225, 29, 72, 0.1); border: 1px solid rgba(225, 29, 72, 0.3); border-radius: 12px; padding: 14px; max-width: 340px; margin-bottom: 16px;">
+          <p style="color: #fda4af; font-size: 12px; font-weight: 600; margin: 0 0 6px 0;">Không thể tải mã nguồn qua iframe sandbox</p>
+          <p id="velcat-error-text" style="color: #fca5a5; font-size: 11px; font-family: monospace; word-break: break-all; margin: 0;"></p>
+        </div>
+
+        <a 
+          href="javascript:window.open(window.location.href, '_blank')"
+          style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #38bdf8; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); padding: 8px 16px; border-radius: 10px; text-decoration: none; cursor: pointer;"
+        >
+          <span>Mở trong Tab Mới (Open in new tab)</span>
+          <span>↗</span>
+        </a>
+      </div>
+      <style>
+        @keyframes velcat-spin {
+          to { transform: rotate(360deg); }
+        }
+      </style>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

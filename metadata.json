@@ -1,0 +1,6 @@
+{
+  "name": "VelCat Pro",
+  "description": "Nền tảng quản lý triển khai tự động & điều hành công việc thông minh, tích hợp AI Agent, CI/CD, dashboard thời gian thực và kết nối GitHub repository.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
