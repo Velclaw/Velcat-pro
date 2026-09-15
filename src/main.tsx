@@ -4,6 +4,17 @@ import App from './App.tsx';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import './index.css';
 
+// Compatibility bridge: the UI historically called the plural endpoint while
+// the Express server exposes /api/deploy/trigger. Keep the public UI contract
+// stable without duplicating server handlers.
+const nativeFetch = window.fetch.bind(window);
+window.fetch = (input: RequestInfo | URL, init?: RequestInit) => {
+  if (typeof input === 'string' && input === '/api/deployments/trigger') {
+    input = '/api/deploy/trigger';
+  }
+  return nativeFetch(input, init);
+};
+
 const rootEl = document.getElementById('root');
 if (rootEl) {
   try {
